@@ -7,10 +7,12 @@ export enum ActionTypes {
 
 export class AddTodo implements Action {
   public readonly type = ActionTypes.AddTodo;
-  constructor(readonly payload: { todo: string }) {}
+  constructor(public payload: string) {}
 }
 
-export class AddRemove implements Action {
+export class RemoveTodo implements Action {
   public readonly type = ActionTypes.RemoveTodo;
-  constructor(readonly payload: { todo: string }) {}
+  constructor(public payload: string) {}
 }
+
+export type TodoActions = AddTodo | RemoveTodo;
