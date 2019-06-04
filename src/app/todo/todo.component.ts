@@ -1,6 +1,6 @@
+import { AddTodo } from './../todo.action';
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
-import { State } from '../todo.state';
 import { Observable } from 'rxjs';
 
 @Component({
@@ -15,5 +15,11 @@ export class TodoComponent implements OnInit {
     this.$todos = todoStore.pipe(select('todos'));
   }
 
-  ngOnInit() {}
+  ngOnInit() {
+    this.addTodo();
+  }
+
+  addTodo() {
+    this.todoStore.dispatch(new AddTodo('Call Dad'));
+  }
 }
