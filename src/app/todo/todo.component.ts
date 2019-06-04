@@ -9,17 +9,16 @@ import { Observable } from 'rxjs';
   styleUrls: ['./todo.component.scss']
 })
 export class TodoComponent implements OnInit {
+  newTodo: string;
   $todos: Observable<string[]>;
 
   constructor(private todoStore: Store<{ todos: string[] }>) {
     this.$todos = todoStore.pipe(select('todos'));
   }
 
-  ngOnInit() {
-    this.addTodo();
-  }
+  ngOnInit() {}
 
   addTodo() {
-    this.todoStore.dispatch(new AddTodo('Call Dad'));
+    this.todoStore.dispatch(new AddTodo(this.newTodo));
   }
 }
