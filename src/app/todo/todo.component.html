@@ -1,5 +1,11 @@
-<mat-form-field>
-  <input matInput placeholder="Input" [(ngModel)]="newTodo">
-</mat-form-field>
-<button mat-button mat-raised-button (click)="addTodo()">Add Todo</button>
-{{ $todos | async | json }}
+<div class="todo-container">
+  <div class="input-wrapper">
+    <mat-form-field>
+      <input matInput placeholder="New Todo" [(ngModel)]="newTodo">
+    </mat-form-field>
+  </div>
+  <div class="button-wrapper">
+    <button mat-button mat-raised-button (click)="addTodo()">Add Todo</button>
+  </div>
+  {{ $todos | async | json }}
+</div>

@@ -1,0 +1,17 @@
+.todo-container {
+  width: 100%;
+  padding: 8px;
+
+  .input-wrapper {
+    width: 100%;
+
+    .mat-form-field {
+      width: 100%;
+    }
+  }
+
+  .button-wrapper {
+    display: flex;
+    justify-content: flex-end;
+  }
+}
