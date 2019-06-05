@@ -4,7 +4,8 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import {
   MatButtonModule,
   MatFormFieldModule,
-  MatInputModule
+  MatInputModule,
+  MatTableModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 
@@ -25,6 +26,7 @@ import { todoReducer } from './todo.reducer';
     MatButtonModule,
     MatFormFieldModule,
     MatInputModule,
+    MatTableModule,
     StoreModule.forRoot({ todos: todoReducer })
   ],
   providers: [],
