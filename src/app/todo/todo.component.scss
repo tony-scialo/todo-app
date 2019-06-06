@@ -23,6 +23,10 @@
 
     button {
       float: right;
+
+      &:hover {
+        color: #4CAF50;
+      }
     }
   }
 
