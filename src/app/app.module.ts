@@ -5,7 +5,8 @@ import {
   MatButtonModule,
   MatFormFieldModule,
   MatInputModule,
-  MatTableModule
+  MatTableModule,
+  MatIconModule
 } from '@angular/material';
 import { FormsModule } from '@angular/forms';
 
@@ -27,6 +28,7 @@ import { todoReducer } from './todo.reducer';
     MatFormFieldModule,
     MatInputModule,
     MatTableModule,
+    MatIconModule,
     StoreModule.forRoot({ todos: todoReducer })
   ],
   providers: [],

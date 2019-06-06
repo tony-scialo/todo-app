@@ -2,7 +2,7 @@ import { Action } from '@ngrx/store';
 
 export enum ActionTypes {
   AddTodo = '[TODO Component] Add_Todo',
-  RemoveTodo = '[TODO Component] Remove_Todo'
+  CompleteTodo = '[TODO Component] Complete_Todo'
 }
 
 export class AddTodo implements Action {
@@ -10,9 +10,9 @@ export class AddTodo implements Action {
   constructor(public payload: string) {}
 }
 
-export class RemoveTodo implements Action {
-  public readonly type = ActionTypes.RemoveTodo;
+export class CompleteTodo implements Action {
+  public readonly type = ActionTypes.CompleteTodo;
   constructor(public payload: string) {}
 }
 
-export type TodoActions = AddTodo | RemoveTodo;
+export type TodoActions = AddTodo | CompleteTodo;

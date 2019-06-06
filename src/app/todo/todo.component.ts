@@ -1,5 +1,5 @@
 import { State } from './../todo.state';
-import { AddTodo } from './../todo.action';
+import { AddTodo, CompleteTodo } from './../todo.action';
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
 import { Observable } from 'rxjs';
@@ -11,17 +11,20 @@ import { Observable } from 'rxjs';
 })
 export class TodoComponent implements OnInit {
   newTodo: string;
-  todo$: Observable<State>;
+  state$: Observable<State>;
+  displayedColumns: string[] = ['todo', 'completed'];
 
-  displayedColumns: string[] = ['id', 'todo'];
-
-  constructor(private todoStore: Store<{ todos }>) {
-    this.todo$ = todoStore.pipe(select('todos'));
+  constructor(private todoStore: Store<{ State }>) {
+    this.state$ = todoStore.pipe(select('todos'));
   }
 
   ngOnInit() {}
 
   addTodo() {
     this.todoStore.dispatch(new AddTodo(this.newTodo));
+  }
+
+  completeTodo(todo: string) {
+    this.todoStore.dispatch(new CompleteTodo(todo));
   }
 }
