@@ -8,5 +8,5 @@ export interface State {
 }
 
 export const initialState: State = {
-  todos: [{ id: 1, todo: 'Call Mom' }, { id: 2, todo: 'Call Dad' }]
+  todos: [{ id: 1, todo: 'Call Mom' }]
 };

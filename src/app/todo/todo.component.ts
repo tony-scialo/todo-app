@@ -10,13 +10,10 @@ import { Observable } from 'rxjs';
 })
 export class TodoComponent implements OnInit {
   newTodo: string;
-  $todos: Observable<string[]>;
-
-  displayedColumns: string[] = ['id', 'todo'];
-  test = [{ id: 1, todo: 'Call Mom' }, { id: 2, todo: 'Call Dad' }];
+  todo$: Observable<string[]>;
 
   constructor(private todoStore: Store<{ todos: string[] }>) {
-    this.$todos = todoStore.pipe(select('todos'));
+    this.todo$ = todoStore.pipe(select('todos'));
   }
 
   ngOnInit() {}

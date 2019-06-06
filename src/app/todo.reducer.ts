@@ -8,7 +8,7 @@ export function todoReducer(state = initialState, action: TodoActions): State {
       return {
         ...state,
         todos: state.todos.concat({
-          id: state.todos.length,
+          id: state.todos.length + 1,
           todo: action.payload
         })
       };
