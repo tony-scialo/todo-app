@@ -1,3 +1,4 @@
+import { State } from './../todo.state';
 import { AddTodo } from './../todo.action';
 import { Component, OnInit } from '@angular/core';
 import { Store, select } from '@ngrx/store';
@@ -10,9 +11,11 @@ import { Observable } from 'rxjs';
 })
 export class TodoComponent implements OnInit {
   newTodo: string;
-  todo$: Observable<string[]>;
+  todo$: Observable<State>;
 
-  constructor(private todoStore: Store<{ todos: string[] }>) {
+  displayedColumns: string[] = ['id', 'todo'];
+
+  constructor(private todoStore: Store<{ todos }>) {
     this.todo$ = todoStore.pipe(select('todos'));
   }
 
