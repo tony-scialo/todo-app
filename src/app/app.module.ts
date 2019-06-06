@@ -14,6 +14,7 @@ import { AppRoutingModule } from './app-routing.module';
 import { AppComponent } from './app.component';
 import { TodoComponent } from './todo/todo.component';
 import { StoreModule } from '@ngrx/store';
+import { StoreDevtoolsModule } from '@ngrx/store-devtools';
 
 import { todoReducer } from './todo.reducer';
 
@@ -29,7 +30,10 @@ import { todoReducer } from './todo.reducer';
     MatInputModule,
     MatTableModule,
     MatIconModule,
-    StoreModule.forRoot({ todos: todoReducer })
+    StoreModule.forRoot({ todos: todoReducer }),
+    StoreDevtoolsModule.instrument({
+      maxAge: 10
+    })
   ],
   providers: [],
   bootstrap: [AppComponent]
