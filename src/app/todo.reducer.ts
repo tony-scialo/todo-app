@@ -7,7 +7,10 @@ export function todoReducer(state = initialState, action: TodoActions): State {
     case ActionTypes.AddTodo:
       return {
         ...state,
-        todos: state.todos.concat(action.payload)
+        todos: state.todos.concat({
+          id: state.todos.length,
+          todo: action.payload
+        })
       };
     case ActionTypes.RemoveTodo:
       return {

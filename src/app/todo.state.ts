@@ -1,7 +1,12 @@
+export interface Todo {
+  id: number;
+  todo: string;
+}
+
 export interface State {
-  todos: string[];
+  todos: Todo[];
 }
 
 export const initialState: State = {
-  todos: ['Call Mom']
+  todos: [{ id: 1, todo: 'Call Mom' }, { id: 2, todo: 'Call Dad' }]
 };
